@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{459C17F5-71BA-4CED-8595-DF237483334F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libasm</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <C99Support>true</C99Support>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="alphadis.h" />
+    <ClInclude Include="alphaopc.h" />
+    <ClInclude Include="arm.h" />
+    <ClInclude Include="armdis.h" />
+    <ClInclude Include="asm.h" />
+    <ClInclude Include="data.h" />
+    <ClInclude Include="dis-asm.h" />
+    <ClInclude Include="endianess.h" />
+    <ClInclude Include="ia64dis.h" />
+    <ClInclude Include="ia64opc.h" />
+    <ClInclude Include="ildis.h" />
+    <ClInclude Include="ilopc.h" />
+    <ClInclude Include="javadis.h" />
+    <ClInclude Include="javaopc.h" />
+    <ClInclude Include="ppcdis.h" />
+    <ClInclude Include="ppcopc.h" />
+    <ClInclude Include="snprintf.h" />
+    <ClInclude Include="types.h" />
+    <ClInclude Include="vxd.h" />
+    <ClInclude Include="vxdserv.h" />
+    <ClInclude Include="x86asm.h" />
+    <ClInclude Include="x86dis.h" />
+    <ClInclude Include="x86opc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="alphadis.cc" />
+    <ClCompile Include="alphaopc.cc" />
+    <ClCompile Include="arm-dis.cc" />
+    <ClCompile Include="armdis.cc" />
+    <ClCompile Include="asm.cc" />
+    <ClCompile Include="data.cc" />
+    <ClCompile Include="endianess.cc" />
+    <ClCompile Include="htdebug.cc" />
+    <ClCompile Include="ia64dis.cc" />
+    <ClCompile Include="ia64opc.cc" />
+    <ClCompile Include="ildis.cc" />
+    <ClCompile Include="ilopc.cc" />
+    <ClCompile Include="javadis.cc" />
+    <ClCompile Include="javaopc.cc" />
+    <ClCompile Include="ppcdis.cc" />
+    <ClCompile Include="ppcopc.cc" />
+    <ClCompile Include="snprintf.cc" />
+    <ClCompile Include="vxd.cc" />
+    <ClCompile Include="vxdserv.cc" />
+    <ClCompile Include="x86asm.cc" />
+    <ClCompile Include="x86dis.cc" />
+    <ClCompile Include="x86opc.cc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

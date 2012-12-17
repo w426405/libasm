@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="alphadis.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="alphaopc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="arm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="armdis.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="asm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dis-asm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ia64dis.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ia64opc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ildis.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ilopc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="javadis.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="javaopc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ppcdis.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ppcopc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="x86asm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="x86dis.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="x86opc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="types.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vxd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vxdserv.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="endianess.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="snprintf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="data.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="alphadis.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="alphaopc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="armdis.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="arm-dis.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="asm.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ia64dis.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ia64opc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ildis.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ilopc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="javadis.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="javaopc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ppcdis.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ppcopc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="x86asm.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="x86dis.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="x86opc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="htdebug.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vxd.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vxdserv.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="endianess.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="snprintf.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="data.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
