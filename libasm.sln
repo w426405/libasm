@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libasm", "libasm\libasm.vcxproj", "{459C17F5-71BA-4CED-8595-DF237483334F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{5C7EBCFE-77D2-4775-A134-8F032F6CBC49}"
+	ProjectSection(ProjectDependencies) = postProject
+		{459C17F5-71BA-4CED-8595-DF237483334F} = {459C17F5-71BA-4CED-8595-DF237483334F}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +18,10 @@ Global
 		{459C17F5-71BA-4CED-8595-DF237483334F}.Debug|Win32.Build.0 = Debug|Win32
 		{459C17F5-71BA-4CED-8595-DF237483334F}.Release|Win32.ActiveCfg = Release|Win32
 		{459C17F5-71BA-4CED-8595-DF237483334F}.Release|Win32.Build.0 = Release|Win32
+		{5C7EBCFE-77D2-4775-A134-8F032F6CBC49}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5C7EBCFE-77D2-4775-A134-8F032F6CBC49}.Debug|Win32.Build.0 = Debug|Win32
+		{5C7EBCFE-77D2-4775-A134-8F032F6CBC49}.Release|Win32.ActiveCfg = Release|Win32
+		{5C7EBCFE-77D2-4775-A134-8F032F6CBC49}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
