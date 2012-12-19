@@ -1,22 +1,22 @@
 /*
- *	The HT Editor
- *	asm.h
- *
- *	Copyright (C) 1999-2002 Stefan Weyergraf
- *
- *	This program is free software; you can redistribute it and/or modify
- *	it under the terms of the GNU General Public License version 2 as
- *	published by the Free Software Foundation.
- *
- *	This program is distributed in the hope that it will be useful,
- *	but WITHOUT ANY WARRANTY; without even the implied warranty of
- *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *	GNU General Public License for more details.
- *
- *	You should have received a copy of the GNU General Public License
- *	along with this program; if not, write to the Free Software
- *	Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
- */
+*	The HT Editor
+*	asm.h
+*
+*	Copyright (C) 1999-2002 Stefan Weyergraf
+*
+*	This program is free software; you can redistribute it and/or modify
+*	it under the terms of the GNU General Public License version 2 as
+*	published by the Free Software Foundation.
+*
+*	This program is distributed in the hope that it will be useful,
+*	but WITHOUT ANY WARRANTY; without even the implied warranty of
+*	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*	GNU General Public License for more details.
+*
+*	You should have received a copy of the GNU General Public License
+*	along with this program; if not, write to the Free Software
+*	Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+*/
 
 #ifndef __ASM_H__
 #define __ASM_H__
@@ -28,19 +28,24 @@
 typedef uint32 ObjectID;
 typedef uint32 ID;
 
-struct CPU_ADDR {
-	union {
-		struct {
+struct CPU_ADDR
+{
+	union
+	{
+		struct
+		{
 			uint16 seg;
 			uint32 offset;
 		} addr32;
-		struct {
+		struct
+		{
 			uint64 addr;
 		} flat64;
 	};
 };
 
-struct asm_code {
+struct asm_code
+{
 	asm_code *next;
 	int size;
 	byte data[MAX_INSN_SIZE];
@@ -51,10 +56,11 @@ typedef void dis_insn;
 typedef void asm_insn;
 
 /*
- *	CLASS assembler
- */
+*	CLASS assembler
+*/
 
-class Assembler : public Object{
+class Assembler : public Object
+{
 protected:
 	int (*imm_eval_proc)(void *context, const char *s, uint64 &v);
 	void *imm_eval_context;
@@ -66,33 +72,33 @@ protected:
 	int options;
 	bool bigendian;
 
-		void emitbyte(byte b);
-		void emitword(uint16 w);
-		void emitdword(uint32 d);
-		void emitqword(uint64 q);
-		void free_asm_codes();
-		void deletecode(asm_code *c);
-		void clearcode();
-		void newcode();
-		void pushcode();
+	void emitbyte(byte b);
+	void emitword(uint16 w);
+	void emitdword(uint32 d);
+	void emitqword(uint64 q);
+	void free_asm_codes();
+	void deletecode(asm_code *c);
+	void clearcode();
+	void newcode();
+	void pushcode();
 public:
-			Assembler(bool bigendian);
+	Assembler(bool bigendian);
 	virtual		~Assembler();
 
-/* new */
+	/* new */
 	virtual	asm_insn *alloc_insn();
 	virtual	asm_code *encode(asm_insn *asm_insn, int options, CPU_ADDR cur_address);
-		const char *get_error_msg();
+	const char *get_error_msg();
 	virtual	const char *get_name();
 	virtual	bool translate_str(asm_insn *asm_insn, const char *s) = 0;
-		void set_error_msg(const char *format, ...);
-		void set_imm_eval_proc(int (*imm_eval_proc)(void *context, const char *s, uint64 &v), void *imm_eval_context);
-		asm_code *shortest(asm_code *codes);
+	void set_error_msg(const char *format, ...);
+	void set_imm_eval_proc(int (*imm_eval_proc)(void *context, const char *s, uint64 &v), void *imm_eval_context);
+	asm_code *shortest(asm_code *codes);
 };
 
 /*
- *	CLASS disassembler
- */
+*	CLASS disassembler
+*/
 
 /* generic disassembler styles */
 #define DIS_STYLE_HIGHLIGHT		0x80000000		/* create highlighting information in strf() */
@@ -107,7 +113,8 @@ public:
 extern char* (*addr_sym_func)(CPU_ADDR addr, int *symstrlen, void *context);
 extern void* addr_sym_func_context;
 
-enum AsmSyntaxHighlightEnum {
+enum AsmSyntaxHighlightEnum
+{
 	e_cs_default=0,
 	e_cs_comment,
 	e_cs_number,
@@ -115,19 +122,20 @@ enum AsmSyntaxHighlightEnum {
 	e_cs_string
 };
 
-class Disassembler : public Object{
+class Disassembler : public Object
+{
 protected:
 	int options;
 	bool highlight;
 
-		const char *get_cs(AsmSyntaxHighlightEnum style);
-		void hexd(char **s, int size, int options, uint32 imm);
-		void hexq(char **s, int size, int options, uint64 imm);
-		void enable_highlighting();
-		void disable_highlighting();
+	const char *get_cs(AsmSyntaxHighlightEnum style);
+	void hexd(char **s, int size, int options, uint32 imm);
+	void hexq(char **s, int size, int options, uint64 imm);
+	void enable_highlighting();
+	void disable_highlighting();
 public:
-		Disassembler();
-/* new */
+	Disassembler();
+	/* new */
 	virtual	dis_insn *createInvalidInsn();
 	virtual	dis_insn *decode(byte *code, int maxlen, CPU_ADDR cur_address)=0;
 	virtual	dis_insn *duplicateInsn(dis_insn *disasm_insn)=0;
@@ -141,22 +149,22 @@ public:
 };
 
 /*****************************************************************************
- *	The strf() format                                                       *
- *****************************************************************************
-	String	Action
-    --------------------------------------------------
-	%x		substitute expression with symbol "x"
-	?xy...y	if symbol "x" is undefined leave out the whole expression,
-			otherwise subsitute expression with string between the two "y"s
+*	The strf() format                                                       *
+*****************************************************************************
+String	Action
+--------------------------------------------------
+%x		substitute expression with symbol "x"
+?xy...y	if symbol "x" is undefined leave out the whole expression,
+otherwise subsitute expression with string between the two "y"s
 
-	Symbol	Desc
-    --------------------------------------------------
-	p 		prefix
-	n 		name
-	1 		first operand
-	2 		second operand
-	3 		third operand
-	4 		forth operand
+Symbol	Desc
+--------------------------------------------------
+p 		prefix
+n 		name
+1 		first operand
+2 		second operand
+3 		third operand
+4 		forth operand
 */
 
 #define DISASM_STRF_VAR			'%'
