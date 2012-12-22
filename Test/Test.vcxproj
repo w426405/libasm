@@ -88,6 +88,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Test.cpp" />
+    <ClCompile Include="x86RevDis.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="x86RevDis.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
