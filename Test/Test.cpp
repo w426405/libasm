@@ -1864,7 +1864,7 @@ int main(int argc, char* argv[])
 
 	printf("µİ¹éÏÂ½µ·´»ã±à²âÊÔ\n");
 	x86RevDis	revDis(data3,sizeof(data3),0x00401000,0x004012A0);
-	revDis.AddDisaddr(0x00401000);
+	//revDis.AddDisaddr(0x00401000);
 	revDis.Process();
 
 

@@ -111,19 +111,20 @@ CPU_ADDR x86RevDis::branchAddr(x86dis_insn *opcode)
 		{		
 			addr.addr32.offset = opcode->op[0].imm;
 		}
+		break;
 		// 	case X86_OPTYPE_FARPTR:
-		// 		break;
 	case X86_OPTYPE_MEM:
 		{
 			if (opcode->op[0].mem.hasdisp)
 			{
-				addr.addr32.offset = opcode->op[0].mem.disp;
-			}
-			else
-			{
-				break;
+				uint32 disp = opcode->op[0].mem.disp;
+				if (disp >= m_uStartAddr && disp <= (m_uStartAddr + m_uSize))
+				{
+					addr.addr32.offset = *(uint32*)(m_pCode+disp-m_uStartAddr);
+				}
 			}
 		}
+		break;
 	default: break;
 	}
 	return addr;
@@ -151,13 +152,13 @@ void x86RevDis::Process( void )
 			const char* pcsIns = m_decoder.str(&tmp,
 				DIS_STYLE_HEX_ASMSTYLE | DIS_STYLE_HEX_UPPERCASE 
 				| DIS_STYLE_HEX_NOZEROPAD | DIS_STYLE_SIGNED);
-			printf("%08X\t%s\n",uCurAddr,pcsIns);
+			printf("%u\t%s\n",uCurAddr,pcsIns);
 			uCurAddr += it->second.size;
 			i += it->second.size;
 		}
 		else
 		{
-			printf("%08X\tDB %02X\n",uCurAddr,m_pCode[i]);
+			printf("%u\tDB %02X\n",uCurAddr,m_pCode[i]);
 			i++;
 			uCurAddr++;
 		}
